@@ -6,18 +6,25 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "stitch:assets": "node scripts/fetch-stitch-assets.mjs"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
     "next": "16.2.4",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "react-icons": "^5.6.0",
+    "three": "^0.184.0"
   },
   "devDependencies": {
+    "@google/stitch-sdk": "^0.1.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/three": "^0.184.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
     "tailwindcss": "^4",
