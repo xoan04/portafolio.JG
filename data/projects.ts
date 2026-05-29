@@ -103,7 +103,7 @@ export const projects: Project[] = [
     title: "Yakka Sport",
     description: "",
     image: "/companies/yakka-sports.png",
-    techStack: ["React Native", "iOS", "Android", "Push"],
+    techStack: ["Flutter", "Dart", "REST", "Android", "iOS"],
     serviceTypeKey: "mobile",
     caseStudyUrl:
       "https://play.google.com/store/apps/details?id=com.yakka.sport",

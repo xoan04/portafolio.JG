@@ -2,9 +2,9 @@ import type { Dictionary } from "../types";
 
 export const en: Dictionary = {
   meta: {
-    title: "Juan José Gómez Sánchez — Systems Engineer",
+    title: "Juan José Gómez Sánchez — Fullstack Developer",
     description:
-      "Frontend (React, Next.js, Tailwind) and mobile (Flutter, Firebase). Santa Marta, Colombia.",
+      "Fullstack Developer: React, Next.js, Flutter, NestJS, and Prisma. End-to-end web and mobile apps. Santa Marta, Colombia.",
   },
   common: {
     skipToContent: "Skip to content",
@@ -28,31 +28,31 @@ export const en: Dictionary = {
   hero: {
     badge: "Open to projects",
     name: "Juan José Gómez Sánchez",
-    headline: "Systems Engineer",
+    headline: "Fullstack Developer",
     lead:
-      "Focused on React, Next.js, and Tailwind CSS for modern web, and Flutter with Firebase for cross‑platform mobile apps. I build functional, scalable interfaces with strong UX.",
+      "Systems Engineer with 2+ years building end-to-end web and mobile applications. React, Next.js, and TypeScript on the frontend; Flutter on mobile; NestJS, Prisma, and PostgreSQL on the backend. I have shipped employment platforms, e-commerce, SaaS, and MVPs across Colombia, Latin America, and Australia.",
     ctaProjects: "View projects",
     ctaContact: "Get in touch",
     stats: {
-      experience: { label: "Age", value: "24" },
-      focus: { label: "Focus", value: "Web & mobile" },
+      experience: { label: "Experience", value: "2+ years" },
+      focus: { label: "Focus", value: "Fullstack" },
       location: { label: "Location", value: "Santa Marta, CO" },
     },
     avatarAlt: "Photo of Juan José Gómez Sánchez",
   },
   about: {
     eyebrow: "Professional profile",
-    title: "Systems engineering with a product mindset",
+    title: "Product-oriented fullstack development",
     description:
-      "Graduate of Universidad del Magdalena. Since 2024 I have worked independently on digital solutions and on mobile products with Yakka Labour and Yakka Sport Jobs. I emphasize code quality, autonomy, and teamwork.",
+      "Fullstack Developer and Systems Engineer with 2+ years of experience building end-to-end web and mobile applications. Strong in frontend with React, Next.js, TypeScript, and TailwindCSS, and cross-platform mobile with Flutter/Dart. Backend experience with NestJS, Prisma, and PostgreSQL for REST APIs, authentication, and data persistence. I have delivered employment platforms, e-commerce, SaaS, and MVPs for clients in Colombia, Latin America, and Australia.",
     highlightsTitle: "How I add value",
     highlights: [
-      "Reusable component architectures, React Hooks and React Query on the web.",
-      "Flutter with GetX, Clean Architecture, and Firebase (Auth, Firestore, Storage) on mobile.",
-      "Performance tuning, modular folders, and Vercel deployments with Git/GitHub.",
+      "Web frontend with React, Next.js, TypeScript, TailwindCSS, React Query, SEO, and i18n.",
+      "Mobile with Flutter, GetX, Clean Architecture, and Firebase (Auth, Firestore, Storage).",
+      "Backend with NestJS, Prisma, PostgreSQL, REST APIs, and JWT authentication.",
     ],
     quote:
-      "I care about functional, scalable interfaces, user experience, and solid engineering practices.",
+      "I work across web and mobile frontend in parallel, applying clean architecture and fast delivery supported by modern tools like Cursor.",
     quoteAuthor: "— Juan José Gómez Sánchez",
   },
   education: {
@@ -68,40 +68,50 @@ export const en: Dictionary = {
     eyebrow: "Work experience",
     title: "Recent path",
     description:
-      "Independent frontend work and mobile roles on real products with teams in Colombia and Australia.",
+      "Experience on real employment, e-commerce, and SaaS products with teams in Colombia, Latin America, and Australia.",
     items: [
       {
-        role: "Frontend developer (React / Next.js)",
-        company: "Freelance",
-        period: "Feb. 2024 — Present",
-        bullets: [
-          "Modern, scalable, responsive web UIs with React, Next.js, and Tailwind CSS.",
-          "Reusable architectures, React Hooks, and React Query; performance and modular structure.",
-          "Corporate landing pages, learning platforms with user management, and job portals with filters, auth, and admin panels.",
-          "Deployments and maintenance on Vercel; version control with Git/GitHub.",
-        ],
-      },
-      {
-        role: "Mobile developer (Flutter)",
-        company: "Yakka Labour",
-        period: "Feb. 2024 — Present",
-        bullets: [
-          "Cross‑platform apps with Flutter and Dart; performance, clean architecture, and UX.",
-          "State and navigation with GetX: reactivity, dependency injection, and decoupled controllers.",
-          "Firebase (Auth, Firestore, Storage) for persistence and real‑time data.",
-          "Job‑search app (auth, dynamic profiles, filters) and sports‑professionals app (geolocation, verified profiles).",
-          "Clean Architecture with UI, domain, and data layers.",
-        ],
-      },
-      {
-        role: "Mobile developer (Flutter)",
+        role: "Front-End Developer (Flutter)",
         company: "Yakka Sport Jobs",
         period: "Aug. 2025 — Present",
         bullets: [
-          "Frontend for Yakka Sport Jobs Australia: connects coaches, physios, and technical staff with clubs and academies across Australia.",
-          "Responsive UI/UX for job search, profiles, and application flows.",
-          "REST APIs for authentication and live data.",
-          "Single codebase for Android and iOS.",
+          "Mobile frontend for Yakka Sport Jobs Australia: connects sports professionals with clubs and organizations across Australia.",
+          "Responsive UI/UX and REST API integration for authentication and real-time data.",
+          "Core product flows shipped to production, enabling launch in the Australian market.",
+          "Single codebase for Android and iOS with scalable architecture and reusable components.",
+        ],
+      },
+      {
+        role: "Front-End Developer",
+        company: "MAKERSTECH.CO",
+        period: "Apr. 2025 — Dec. 2025",
+        bullets: [
+          "Modern, responsive web interfaces with React, Next.js, TypeScript, TailwindCSS, and Material UI.",
+          "REST and GraphQL API integration connecting the frontend with backend services.",
+          "Collaboration with designers, backend developers, and product leads through the full feature lifecycle.",
+          "Accessibility, performance, and maintainability best practices.",
+        ],
+      },
+      {
+        role: "Mobile Developer (Flutter)",
+        company: "Yakka Labour",
+        period: "Feb. 2024 — Jul. 2025",
+        bullets: [
+          "Cross-platform apps with Flutter, Dart, and Firebase (Authentication, Firestore, Storage).",
+          "State and navigation with GetX: dependency injection and decoupled controllers.",
+          "Clean Architecture and layered separation (UI, logic, data) in job-search and sports-professional apps.",
+          "Geolocation, verified profiles, and real-time data synchronization.",
+        ],
+      },
+      {
+        role: "IT Assistant",
+        company: "Alcaldía de Ciénaga",
+        period: "Sept. 2023 — Feb. 2024",
+        bullets: [
+          "Technical support for 100+ institutional users with a resolution rate above 90%.",
+          "40% reduction in average response time through proactive diagnostics and preventive maintenance.",
+          "Internal network administration on Windows Server and Linux.",
+          "Process documentation and best practices for technical area standardization.",
         ],
       },
     ],
@@ -133,12 +143,12 @@ export const en: Dictionary = {
     lifetag: {
       title: "LifeTag",
       description:
-        "Emergency ID with QR and NFC for people and pets—allergies, meds, and contacts available instantly, no app install.",
+        "Fullstack SaaS emergency ID system for people and pets via NFC and QR tags, with public profiles accessible without an app and a multi-profile admin panel.",
     },
     kodedocs: {
       title: "KodeDocs",
       description:
-        "Proposals, contracts, and invoices in one flow with e‑signature and a polished experience. Product landing under KodeLabs.",
+        "Fullstack SaaS platform to create, send, and sign proposals, contracts, and invoices in one flow, with digital signatures, an admin dashboard, and shareable links. Adopted by 500+ teams.",
     },
     kodelabs: {
       title: "KodeLabs",
@@ -150,17 +160,42 @@ export const en: Dictionary = {
     eyebrow: "Skills",
     title: "CV stack",
     description:
-      "Technologies listed on your résumé and used across web and mobile work.",
+      "Technologies from the résumé applied across web, mobile, and fullstack backend work.",
     items: [
+      {
+        key: "react",
+        name: "React",
+        detail: "Components, hooks, React Query, and the frontend ecosystem.",
+      },
+      {
+        key: "nextjs",
+        name: "Next.js",
+        detail: "SSR, SEO, i18n, and Vercel deployments.",
+      },
+      {
+        key: "typescript",
+        name: "TypeScript",
+        detail: "Static typing across frontend and backend.",
+      },
+      {
+        key: "tailwind",
+        name: "Tailwind CSS",
+        detail: "Utility-first styling and mobile-first responsive design.",
+      },
+      {
+        key: "nestjs",
+        name: "NestJS",
+        detail: "REST APIs, JWT authentication, and modular architecture.",
+      },
+      {
+        key: "prisma",
+        name: "Prisma",
+        detail: "ORM with PostgreSQL for modeling and persistence.",
+      },
       {
         key: "flutter",
         name: "Flutter",
-        detail: "Cross‑platform apps with Dart and clean architecture.",
-      },
-      {
-        key: "dart",
-        name: "Dart",
-        detail: "Core language for reactive UI and app logic.",
+        detail: "Cross-platform apps with Dart and Clean Architecture.",
       },
       {
         key: "getx",
@@ -173,26 +208,6 @@ export const en: Dictionary = {
         detail: "Auth, Firestore, and Storage in real time.",
       },
       {
-        key: "react",
-        name: "React",
-        detail: "Components, hooks, and the frontend ecosystem.",
-      },
-      {
-        key: "nextjs",
-        name: "Next.js",
-        detail: "SSR, routing, and Vercel deployments.",
-      },
-      {
-        key: "tailwind",
-        name: "Tailwind CSS",
-        detail: "Utility‑first styling and responsive layouts.",
-      },
-      {
-        key: "hooks",
-        name: "React Hooks",
-        detail: "State and side effects in functional components.",
-      },
-      {
         key: "git",
         name: "Git",
         detail: "Version control and collaborative workflows.",
@@ -200,7 +215,7 @@ export const en: Dictionary = {
       {
         key: "github",
         name: "GitHub",
-        detail: "Repositories and code collaboration.",
+        detail: "Repositories, GitHub Actions, and code collaboration.",
       },
     ],
   },
@@ -241,7 +256,7 @@ export const en: Dictionary = {
   },
   footer: {
     line1:
-      "© Juan José Gómez Sánchez — Systems Engineer. Next.js, Tailwind CSS, and Three.js.",
+      "© Juan José Gómez Sánchez — Fullstack Developer. React, Next.js, Flutter, and NestJS.",
     line2: "Static portfolio — no backend.",
   },
 };

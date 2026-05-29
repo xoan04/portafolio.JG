@@ -18,12 +18,12 @@ const BY_ID: Record<string, { es: string; en: string }> = {
     en: "Site with booking and content for a dive center: a clear experience on mobile and desktop.",
   },
   "6": {
-    es: "Plataforma a medida con React y APIs: integración en la nube y flujos de negocio complejos.",
-    en: "Custom platform with React and APIs: cloud integration and complex business flows.",
+    es: "Plataforma personalizada para subastas con integración de servicios cloud y APIs REST.",
+    en: "Custom auction platform with cloud services integration and REST APIs.",
   },
   autoxpert: {
-    es: "E-commerce con pagos, catálogo y SEO para repuestos y accesorios automotrices.",
-    en: "E-commerce with payments, catalog, and SEO for auto parts and accessories.",
+    es: "Tienda online del sector automotriz con catálogo, carrito, integración de pagos y optimización SEO.",
+    en: "Automotive e-commerce with catalog, cart, payment integration, and SEO optimization.",
   },
   "9": {
     es: "MVP en Next.js y Vercel: catálogo y flujo ágil de pedidos para repuestos.",
@@ -38,8 +38,8 @@ const BY_ID: Record<string, { es: string; en: string }> = {
     en: "2025 web app with authentication, TypeScript, and continuous deploy on Vercel.",
   },
   "16": {
-    es: "App móvil multiplataforma con notificaciones y presencia en tiendas Google Play.",
-    en: "Cross-platform mobile app with notifications and presence on Google Play.",
+    es: "App móvil que conecta profesionales del deporte con clubes y organizaciones deportivas en toda Australia. Publicada en Google Play.",
+    en: "Mobile app connecting sports professionals with clubs and sports organizations across Australia. Published on Google Play.",
   },
 };
 
