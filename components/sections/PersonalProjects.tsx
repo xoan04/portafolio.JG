@@ -1,3 +1,8 @@
+"use client";
+
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { PixelCard } from "@/components/ui/PixelCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import {
   personalProjectLinks,
@@ -24,7 +29,7 @@ export function PersonalProjects({ dict }: { dict: Dictionary }) {
     <section
       id="personales"
       aria-labelledby="personal-projects-heading"
-      className="scroll-mt-24 border-t border-white/5 bg-zinc-950 py-20 sm:py-24"
+      className="scroll-mt-24 border-t-[3px] border-border/15 bg-surface/35 py-20 sm:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
@@ -38,36 +43,30 @@ export function PersonalProjects({ dict }: { dict: Dictionary }) {
           {personalProjectLinks.map((row) => {
             const copy = getCardCopy(dict, row.id);
             const badgeLabel =
+              row.badge === "cofounder" ? p.badgeCofounder : p.badgeProduct;
+            const tone =
               row.badge === "cofounder"
-                ? p.badgeCofounder
-                : p.badgeProduct;
+                ? ("purple" as const)
+                : ("primary" as const);
 
             return (
               <li key={row.id}>
-                <article className="flex h-full flex-col rounded-2xl border border-white/10 bg-gradient-to-br from-zinc-900/80 via-zinc-900/40 to-zinc-950 p-6 shadow-lg shadow-black/30 transition hover:border-cyan-500/35">
+                <PixelCard className="flex h-full flex-col p-6">
                   <div className="flex items-start justify-between gap-3">
-                    <h3 className="font-[family-name:var(--font-display)] text-xl font-semibold text-white">
+                    <h3 className="font-pixel text-[12px] leading-relaxed text-text sm:text-sm">
                       {copy.title}
                     </h3>
-                    <span className="shrink-0 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-cyan-300/95">
-                      {badgeLabel}
-                    </span>
+                    <Badge tone={tone}>{badgeLabel}</Badge>
                   </div>
-                  <p className="mt-4 flex-1 text-sm leading-relaxed text-zinc-400">
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-muted">
                     {copy.description}
                   </p>
-                  <a
-                    href={row.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 inline-flex w-fit items-center text-sm font-semibold text-cyan-300 transition hover:text-cyan-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400"
-                  >
-                    {p.visitLink}
-                    <span aria-hidden className="ml-1">
-                      ↗
-                    </span>
-                  </a>
-                </article>
+                  <div className="mt-6">
+                    <Button href={row.url} external variant="secondary" size="sm">
+                      {p.visitLink}
+                    </Button>
+                  </div>
+                </PixelCard>
               </li>
             );
           })}

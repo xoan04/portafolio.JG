@@ -1,95 +1,147 @@
-import type { Dictionary } from "@/lib/i18n/types";
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
-export function Hero({ dict }: { dict: Dictionary }) {
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { DialogueBox } from "@/components/ui/DialogueBox";
+import { XpBar } from "@/components/ui/XpBar";
+import type { Locale } from "@/lib/i18n/config";
+import { getUiChrome } from "@/lib/i18n/ui-chrome";
+import type { Dictionary } from "@/lib/i18n/types";
+import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
+
+export function Hero({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const { hero } = dict;
+  const chrome = getUiChrome(locale);
+  const reduceMotion = useReducedMotion();
+
   return (
     <section
       id="intro"
       aria-labelledby="hero-heading"
       className="relative isolate overflow-hidden pt-28 pb-20 sm:pt-32 sm:pb-28 lg:pt-36 lg:pb-32"
     >
+      {/* Floating pixel decorations */}
       <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden>
-        {/* Gradiente en lugar de imagen: evita 404 si falta /assets/hero-mesh.svg */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_85%_55%_at_50%_-25%,rgba(34,211,238,0.18),transparent_55%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_45%_at_100%_5%,rgba(129,140,248,0.14),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_0%_30%,rgba(52,211,153,0.08),transparent_45%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/55 via-zinc-950/92 to-zinc-950" />
+        <span className="absolute top-28 left-[12%] h-2 w-2 animate-pixel-float bg-accent opacity-60" />
+        <span
+          className="absolute top-40 right-[18%] h-2 w-3 animate-pixel-float bg-primary opacity-50"
+          style={{ animationDelay: "0.8s" }}
+        />
+        <span
+          className="absolute bottom-24 left-[22%] h-1.5 w-1.5 bg-pink opacity-50"
+          style={{ boxShadow: "0 0 0 2px var(--border)" }}
+        />
+        <span className="absolute top-1/2 right-[8%] h-2 w-2 rotate-45 bg-purple/50 opacity-40" />
       </div>
 
-      <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-center lg:gap-16 lg:px-8">
-        <div>
-          <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-zinc-300 backdrop-blur">
-            <span
-              className="h-1.5 w-1.5 rounded-full bg-emerald-400"
-              aria-hidden
-            />
+      <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-center lg:gap-16 lg:px-8">
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Badge tone="secondary" icon={<span className="h-1.5 w-1.5 rounded-full bg-secondary" aria-hidden />}>
             {hero.badge}
+          </Badge>
+
+          <p className="font-pixel mt-5 text-[10px] text-primary sm:text-[11px]">
+            LV.99 · {hero.headline}
           </p>
-          <p className="mt-4 text-sm font-medium uppercase tracking-widest text-cyan-300/90">
-            {hero.headline}
-          </p>
+
           <h1
             id="hero-heading"
-            className="mt-2 font-[family-name:var(--font-display)] text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl"
+            className="font-pixel mt-3 text-balance text-3xl leading-snug tracking-wide text-text sm:text-4xl lg:text-5xl"
           >
             {hero.name}
           </h1>
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-zinc-300 sm:text-xl">
+
+          <div className="mt-5 max-w-md">
+            <XpBar
+              label="XP"
+              value={92}
+              tone="accent"
+              showValue={false}
+            />
+          </div>
+
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
             {hero.lead}
           </p>
+
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link
-              href="#proyectos"
-              className="inline-flex h-11 items-center justify-center rounded-full bg-cyan-400 px-6 text-sm font-semibold text-zinc-950 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200"
-            >
+            <Button href="#proyectos" variant="primary" size="lg">
               {hero.ctaProjects}
-            </Link>
-            <Link
-              href="#contacto"
-              className="inline-flex h-11 items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 text-sm font-semibold text-zinc-100 backdrop-blur transition hover:border-cyan-400/40 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
-            >
+            </Button>
+            <Button href="#contacto" variant="ghost" size="lg">
               {hero.ctaContact}
-            </Link>
+            </Button>
           </div>
-          <dl className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-white/10 pt-8 text-sm">
-            <div>
-              <dt className="text-zinc-500">{hero.stats.experience.label}</dt>
-              <dd className="mt-1 font-[family-name:var(--font-mono)] text-lg font-medium text-white">
+
+          <DialogueBox className="mt-8 max-w-lg" speaker={chrome.npc}>
+            <p>
+              <span className="font-pixel mr-2 text-[9px] text-accent">▶</span>
+              {hero.stats.focus.value} · {hero.stats.location.value} ·{" "}
+              {hero.stats.experience.value}
+            </p>
+          </DialogueBox>
+
+          <dl className="mt-8 grid max-w-lg grid-cols-3 gap-4 border-t-[3px] border-border/20 pt-6 text-sm">
+            <div className="rounded-[12px] border-2 border-border bg-card p-3 shadow-[var(--shadow-pressed)]">
+              <dt className="font-pixel text-[8px] text-muted">
+                {hero.stats.experience.label}
+              </dt>
+              <dd className="mt-1 font-pixel text-[10px] text-text">
                 {hero.stats.experience.value}
               </dd>
             </div>
-            <div>
-              <dt className="text-zinc-500">{hero.stats.focus.label}</dt>
-              <dd className="mt-1 font-medium text-white">
+            <div className="rounded-[12px] border-2 border-border bg-card p-3 shadow-[var(--shadow-pressed)]">
+              <dt className="font-pixel text-[8px] text-muted">
+                {hero.stats.focus.label}
+              </dt>
+              <dd className="mt-1 font-pixel text-[10px] text-text">
                 {hero.stats.focus.value}
               </dd>
             </div>
-            <div>
-              <dt className="text-zinc-500">{hero.stats.location.label}</dt>
-              <dd className="mt-1 font-medium text-white">
+            <div className="rounded-[12px] border-2 border-border bg-card p-3 shadow-[var(--shadow-pressed)]">
+              <dt className="font-pixel text-[8px] text-muted">
+                {hero.stats.location.label}
+              </dt>
+              <dd className="mt-1 text-xs font-medium text-text">
                 {hero.stats.location.value}
               </dd>
             </div>
           </dl>
-        </div>
+        </motion.div>
 
-        <div className="relative mx-auto w-full max-w-[280px] lg:mx-0 lg:max-w-none">
-          <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-cyan-500/25 via-indigo-500/20 to-emerald-500/10 blur-2xl" />
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/60 p-2 shadow-2xl shadow-black/50 ring-1 ring-white/5 backdrop-blur">
-            <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-zinc-900">
+        <motion.div
+          className="relative mx-auto w-full max-w-[260px] lg:mx-0 lg:max-w-none"
+          initial={reduceMotion ? false : { opacity: 0, scale: 0.94 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.55, delay: 0.1 }}
+        >
+          <div
+            className="absolute -inset-3 rounded-[18px] bg-primary/20 blur-xl"
+            aria-hidden
+          />
+          <div className="animate-pixel-float relative overflow-hidden rounded-[var(--radius-card)] border-[3px] border-border bg-card p-2 shadow-[var(--shadow-float)]">
+            <div className="relative aspect-square w-full overflow-hidden rounded-[10px] bg-surface">
               <Image
                 src="/IMG_2756.png"
                 alt={hero.avatarAlt}
                 fill
                 priority
                 className="object-cover object-center"
-                sizes="(max-width: 1024px) 280px, min(320px, 28vw)"
+                sizes="(max-width: 1024px) 260px, min(300px, 26vw)"
+                style={{ imageRendering: "auto" }}
               />
             </div>
+            <div className="mt-2 flex items-center justify-between gap-2 px-1 pb-1">
+              <Badge tone="primary">{chrome.player}</Badge>
+              <span className="font-pixel text-[8px] text-muted">HP 100</span>
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

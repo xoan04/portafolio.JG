@@ -1,4 +1,4 @@
-import { ScrollDrivenScene } from "@/components/3d/ScrollDrivenScene";
+import { PixelBackground } from "@/components/ui/PixelBackground";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { About } from "@/components/sections/About";
@@ -26,7 +26,7 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <>
-      <ScrollDrivenScene />
+      <PixelBackground />
       <div className="relative z-10">
         <a href="#contenido-principal" className="skip-to-main">
           {dict.common.skipToContent}
@@ -36,15 +36,15 @@ export default async function HomePage({ params }: Props) {
           dict={{ nav: dict.nav, common: dict.common }}
         />
         <main id="contenido-principal">
-          <Hero dict={dict} />
-          <About dict={dict} />
-          <Experience dict={dict} />
+          <Hero dict={dict} locale={locale} />
+          <About dict={dict} locale={locale} />
+          <Experience dict={dict} locale={locale} />
           <Projects dict={dict} locale={locale} />
           <PersonalProjects dict={dict} />
-          <Skills dict={dict} />
-          <Contact dict={dict} />
+          <Skills dict={dict} locale={locale} />
+          <Contact dict={dict} locale={locale} />
         </main>
-        <SiteFooter dict={dict} />
+        <SiteFooter dict={dict} locale={locale} />
       </div>
     </>
   );

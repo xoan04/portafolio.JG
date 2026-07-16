@@ -15,7 +15,7 @@ export function Projects({ dict, locale }: Props) {
     <section
       id="proyectos"
       aria-labelledby="projects-heading"
-      className="scroll-mt-24 bg-zinc-950 py-20 sm:py-24"
+      className="scroll-mt-24 border-t-[3px] border-border/15 py-20 sm:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading

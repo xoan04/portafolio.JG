@@ -14,17 +14,19 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div className="mx-auto max-w-3xl text-center">
-      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400/90">
+      <p className="font-pixel inline-flex items-center gap-2 rounded-[var(--radius-badge)] border-2 border-border bg-accent/40 px-3 py-1.5 text-[9px] text-text">
+        <span className="inline-block h-2 w-2 bg-secondary" aria-hidden />
         {eyebrow}
       </p>
       <h2
         id={titleId}
-        className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-zinc-50 sm:text-4xl"
+        className="font-pixel mt-5 text-balance text-2xl leading-snug tracking-wide text-text sm:text-3xl lg:text-4xl"
       >
         {title}
       </h2>
+      <div className="pixel-divider mx-auto mt-5 max-w-xs" aria-hidden />
       {description ? (
-        <p className="mt-4 text-base leading-relaxed text-zinc-400 sm:text-lg">
+        <p className="mt-5 text-base leading-relaxed text-muted sm:text-lg">
           {description}
         </p>
       ) : null}

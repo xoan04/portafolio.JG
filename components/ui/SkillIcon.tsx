@@ -6,59 +6,79 @@ import {
   SiGithub,
   SiJavascript,
   SiNextdotjs,
+  SiNodedotjs,
+  SiPrisma,
   SiReact,
   SiTailwindcss,
+  SiTypescript,
 } from "react-icons/si";
 import { BsBoxes } from "react-icons/bs";
+import { Server } from "lucide-react";
 
-const iconClass = "h-8 w-8 shrink-0";
+const iconClass = "h-7 w-7 shrink-0";
 
-/** Iconos de tecnología vía react-icons (Simple Icons + complementos). */
+/** Iconos de tecnología vía react-icons + Lucide. */
 export function SkillIcon({ skillKey }: { skillKey: string }) {
   switch (skillKey) {
     case "flutter":
       return (
-        <SiFlutter className={`${iconClass} text-sky-400`} aria-hidden />
+        <SiFlutter className={`${iconClass} text-primary`} aria-hidden />
       );
     case "dart":
-      return <SiDart className={`${iconClass} text-blue-500`} aria-hidden />;
+      return <SiDart className={`${iconClass} text-primary`} aria-hidden />;
     case "getx":
       return (
-        <BsBoxes className={`${iconClass} text-violet-400`} aria-hidden />
+        <BsBoxes className={`${iconClass} text-purple`} aria-hidden />
       );
     case "firebase":
       return (
-        <SiFirebase className={`${iconClass} text-amber-400`} aria-hidden />
+        <SiFirebase className={`${iconClass} text-orange`} aria-hidden />
       );
     case "react":
       return (
-        <SiReact className={`${iconClass} text-cyan-400`} aria-hidden />
+        <SiReact className={`${iconClass} text-primary`} aria-hidden />
       );
     case "nextjs":
       return (
-        <SiNextdotjs className={`${iconClass} text-zinc-100`} aria-hidden />
+        <SiNextdotjs className={`${iconClass} text-text`} aria-hidden />
+      );
+    case "typescript":
+      return (
+        <SiTypescript className={`${iconClass} text-primary`} aria-hidden />
       );
     case "tailwind":
       return (
-        <SiTailwindcss className={`${iconClass} text-sky-300`} aria-hidden />
+        <SiTailwindcss className={`${iconClass} text-primary`} aria-hidden />
+      );
+    case "nestjs":
+      return (
+        <Server className={`${iconClass} text-danger`} aria-hidden />
+      );
+    case "prisma":
+      return (
+        <SiPrisma className={`${iconClass} text-secondary`} aria-hidden />
+      );
+    case "node":
+      return (
+        <SiNodedotjs className={`${iconClass} text-secondary`} aria-hidden />
       );
     case "hooks":
       return (
         <SiJavascript
-          className={`${iconClass} text-yellow-400`}
+          className={`${iconClass} text-accent`}
           aria-hidden
         />
       );
     case "git":
-      return <SiGit className={`${iconClass} text-orange-500`} aria-hidden />;
+      return <SiGit className={`${iconClass} text-orange`} aria-hidden />;
     case "github":
       return (
-        <SiGithub className={`${iconClass} text-zinc-200`} aria-hidden />
+        <SiGithub className={`${iconClass} text-text`} aria-hidden />
       );
     default:
       return (
         <span
-          className={`${iconClass} inline-block rounded-lg bg-zinc-700`}
+          className={`${iconClass} inline-block rounded-lg border-2 border-border bg-surface`}
           aria-hidden
         />
       );
